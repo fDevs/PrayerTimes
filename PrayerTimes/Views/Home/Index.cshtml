@@ -1,31 +1,72 @@
-﻿@{
+﻿@model IEnumerable<PrayerTimes.Models.Masjid>
+@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<br>
+<h1 align="center">Jamat Timings</h1>
+<table class="table-hover table table-bordered">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Fajr
+        </th>
+        <th>
+            Zhur
+        </th>
+        <th>
+            Asr
+        </th>
+        <th>
+            Maghrib
+        </th>
+        <th>
+            Isha
+        </th>
+        <th>
+            Jumah 1
+        </th>
+        <th>
+            Jumah 2
+        </th>
+        
+    </tr>
+    
+        @foreach (var masjid in Model)
+        {
+            <tr>
+                <th>
+                    @masjid.MasjidID
+                </th>
+                <th>
+                    @masjid.Name
+                </th>
+                <th>
+                    @masjid.prayerTimings.FajrHr:@masjid.prayerTimings.FajrMin
+                </th>
+                <th>
+                    @masjid.prayerTimings.ZhurHr:@masjid.prayerTimings.ZhurMin
+                </th>
+                <th>
+                    @masjid.prayerTimings.AsrHr:@masjid.prayerTimings.AsrMin
+                </th>
+                <th>
+                    @masjid.prayerTimings.MaghribHr:@masjid.prayerTimings.MaghribMin
+                </th>
+                <th>
+                    @masjid.prayerTimings.IshaHr:@masjid.prayerTimings.IshaMin
+                </th>
+                <th>
+                    @masjid.prayerTimings.Jumah1Hr:@masjid.prayerTimings.Jumah1Min
+                </th>
+                <th>
+                    @masjid.prayerTimings.Jumah2Hr:@masjid.prayerTimings.Jumah2Min
+                </th>
+            </tr>
+        }
+            
+</table>

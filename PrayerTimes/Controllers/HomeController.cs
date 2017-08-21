@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PrayerTimes.Models;
 
 namespace PrayerTimes.Controllers
 {
@@ -10,7 +11,15 @@ namespace PrayerTimes.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var masjids = new List<Masjid>();
+
+            masjids.Add(new Masjid() { Name = "Rahmat-e-Alam Foundation", MasjidID = 1, prayerTimings = new PrayerTimings() });
+            masjids.Add(new Masjid() { Name = "Jamia Masjid", MasjidID = 2, prayerTimings = new PrayerTimings() });
+            masjids.Add(new Masjid() { Name = "Noor Masjid", MasjidID = 3, prayerTimings = new PrayerTimings() });
+            masjids.Add(new Masjid() { Name = "Makki Masjid", MasjidID = 4, prayerTimings = new PrayerTimings() });
+            masjids.Add(new Masjid() { Name = "Rahmat-e-Alam Musallah", MasjidID = 5, prayerTimings = new PrayerTimings() });
+
+            return View(masjids);
         }
 
         public ActionResult About()
