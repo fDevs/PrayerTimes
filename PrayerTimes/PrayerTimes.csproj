@@ -158,6 +158,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Masjid.cs" />
     <Compile Include="Models\MasjidUser.cs" />
+    <Compile Include="Models\PrayerTimings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,7 @@ namespace PrayerTimes.Models
 
         public string Name { get; set; }
 
+
         
     }
 }
