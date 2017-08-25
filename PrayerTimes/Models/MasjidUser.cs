@@ -8,5 +8,7 @@ namespace PrayerTimes.Models
     public class MasjidUser
     {
         public int MasjidUserId { get; set; }
+
+        
     }
 }
